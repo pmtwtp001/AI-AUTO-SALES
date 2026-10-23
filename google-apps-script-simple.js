@@ -43,7 +43,7 @@ function getPromoterMapping() {
     for (let i = 1; i < data.length; i++) {
       const refCode = String(data[i][0]).trim();
       const email = String(data[i][1]).trim();
-      const name = String(data[i][2] || '').trim() || '培訓法拍接班人';  // C列：姓名，如果没有则使用默认值
+      const name = String(data[i][2] || '').trim() || '小小眉毛,大大商機';  // C列：姓名，如果没有则使用默认值
       
       if (refCode && email) {
         mapping[refCode] = {
@@ -119,7 +119,7 @@ function getPromoterInfo(refCode) {
   const promoterMapping = getPromoterMapping();
   const defaultInfo = {
     email: DEFAULT_EMAIL,
-    name: '培訓法拍接班人'
+    name: '小小眉毛,大大商機'
   };
   
   const promoterInfo = promoterMapping[refCode] || defaultInfo;
@@ -315,7 +315,7 @@ WhatsApp：${customerWhatsapp}
 祝您成交順利！🎉
 
 ---
-培訓法拍接班人
+小小眉毛,大大商機
 自動通知系統
     `.trim();
     
@@ -332,15 +332,13 @@ WhatsApp：${customerWhatsapp}
     
     // 發送確認郵件給報名客戶
     if (customerEmail) {
-      const customerSubject = `感謝您報名「培訓法拍接班人」`;
+      const customerSubject = `感謝您報名「小小眉毛,大大商機」`;
       const regionInfo = customerRegion ? `\n\n記得您的時間與地址：${customerRegion}` : '';
       
       const customerBody = `
 ${customerName}，
 
-感謝您對「培訓法拍接班人」有興趣！${regionInfo}
-
-歡迎您的到來！
+感謝您對「小小眉毛,大大商機」有興趣！${regionInfo}
 
 我們期待與您見面！🚀
 ---
@@ -351,7 +349,7 @@ ${customerName}，
 如有任何疑問，歡迎直接聯繫您的顧問！
 
 ---
-培訓法拍接班人 團隊
+小小眉毛,大大商機 團隊
       `.trim();
       
       try {
@@ -457,7 +455,7 @@ function testPromoterCode() {
   Logger.log('📧 推广人员邮箱: ' + promoterInfo.email);
   Logger.log('👤 推广人员姓名: ' + promoterInfo.name);
   
-  if (promoterInfo.name === '培訓法拍接班人') {
+  if (promoterInfo.name === '小小眉毛,大大商機') {
     Logger.log('⚠️ 警告：使用的是默认值，说明推广代码 "' + testCode + '" 没有在 Sheet 中找到！');
   } else {
     Logger.log('✅ 成功找到推广人员信息！');
@@ -491,17 +489,9 @@ function testCustomerEmail() {
   const customerBody = `
 ${testCustomerName}，
 
-感謝您對「培訓法拍接班人」有興趣！${regionInfo}
+感謝您對「小小眉毛,大大商機」有興趣！${regionInfo}
 
-歡迎您的到來！
-
-如欲詢問問題，請點選以下連結加入官方社群：
-👉 https://line.me/ti/g2/lwbHM8cXtERXRSpCKRNz1q7769jgTxzsKA7iTw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default
-
-🔑 密碼：13579
-
-我們期待與您在社群中見面，一起探索 AI 創業的無限可能！🚀
-
+我們期待與您見面！🚀
 ---
 您的專屬服務顧問：
 👤 姓名：${promoterInfo.name}
@@ -510,7 +500,7 @@ ${testCustomerName}，
 如有任何疑問，歡迎直接聯繫您的顧問！
 
 ---
-培訓法拍接班人 團隊
+小小眉毛,大大商機 團隊
   `.trim();
   
   Logger.log('=== 客户将收到的邮件内容 ===');
@@ -519,10 +509,10 @@ ${testCustomerName}，
   Logger.log('=== 测试完成 ===');
   
   // 检查是否使用默认值
-  if (promoterInfo.name === '培訓法拍接班人') {
+  if (promoterInfo.name === '小小眉毛,大大商機') {
     Logger.log('');
     Logger.log('⚠️⚠️⚠️ 警告 ⚠️⚠️⚠️');
-    Logger.log('客户邮件中显示的是默认值 "培訓法拍接班人"');
+    Logger.log('客户邮件中显示的是默认值 "小小眉毛,大大商機"');
     Logger.log('原因：推广代码 "' + testRefCode + '" 在 Google Sheet 中找不到匹配项');
     Logger.log('');
     Logger.log('请检查：');

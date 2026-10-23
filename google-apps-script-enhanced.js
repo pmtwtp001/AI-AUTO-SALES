@@ -328,7 +328,7 @@ WhatsApp：${customerWhatsapp}
 祝您成交順利！🎉
 
 ---
-AI+自媒體創業系統
+小小眉毛,大大商機
 自動通知系統
     `.trim();
     
@@ -345,19 +345,17 @@ AI+自媒體創業系統
     
     // 發送確認郵件給報名客戶
     if (customerEmail) {
-      const customerSubject = `感謝您報名「AI+自媒體創業系統」`;
+      const customerSubject = `感謝您報名「小小眉毛,大大商機」`;
       const regionInfo = customerRegion ? `\n\n記得您的時間與地址：${customerRegion}` : '';
       
       const customerBody = `
 ${customerName}，
 
-感謝您對「AI+自媒體創業系統」有興趣！${regionInfo}
-
-歡迎您的到來！
+感謝您對「小小眉毛,大大商機」有興趣！${regionInfo}
 
 我們期待與您見面！🚀
 ---
-培訓法拍接班人 團隊
+小小眉毛,大大商機 團隊
       `.trim();
       
       try {
