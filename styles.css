@@ -65,6 +65,10 @@ body {
     object-fit: contain;
 }
 
+.hero-top-image.clickable-image {
+    cursor: pointer;
+}
+
 /* 顶部横幅 */
 .top-banner {
     background: var(--gradient-primary);

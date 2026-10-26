@@ -200,6 +200,24 @@ function initCTAButtons() {
     });
 }
 
+// 主視覺圖點擊 → 打開報名表單
+function initHeroTopImageClicks() {
+    document.querySelectorAll('.hero-image-section .hero-top-image').forEach((img) => {
+        img.classList.add('clickable-image');
+        img.setAttribute('title', '點擊報名');
+        img.setAttribute('role', 'button');
+        img.setAttribute('tabindex', '0');
+
+        img.addEventListener('click', () => openModal());
+        img.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openModal();
+            }
+        });
+    });
+}
+
 // 打开模态框
 function openModal() {
     const modal = document.getElementById('orderModal');
@@ -750,6 +768,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCountdown();
     initFAQ();
     initCTAButtons();
+    initHeroTopImageClicks();
     initModal();
     initSmoothScroll();
     initScrollAnimations();
@@ -763,6 +782,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 供成功頁「關閉」按鈕呼叫
 window.restoreOrderFormAfterSuccess = restoreOrderFormAfterSuccess;
+window.openModal = openModal;
 
 // 监听页面可见性变化，暂停/恢复倒计时
 document.addEventListener('visibilitychange', () => {
